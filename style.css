@@ -5,45 +5,43 @@
   box-sizing: border-box;
 }
 
-/* Fix width issue */
+body {
+  background: linear-gradient(135deg, #153677, #4e085f);
+  min-height: 100vh;
+}
+
 .container {
   width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #153677, #4e085f);
-  padding: 10px;
+  padding: 20px;
 }
 
 .todo-app {
-  width: 100%;
   max-width: 540px;
   background: #fff;
-  margin: 80px auto 20px;
-  padding: 40px 30px 70px;
+  margin: 80px auto;
+  padding: 30px 20px 50px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .todo-app h2 {
   color: #002765;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  justify-content: center;
-}
-
-/* Form row styling */
-.row {
-  display: flex;
-  align-items: center;
-  background: #edeef0;
-  border-radius: 30px;
-  padding: 5px 10px;
-  gap: 10px;
+  text-align: center;
   margin-bottom: 25px;
 }
 
-/* Make input flexible */
-input {
+/* New responsive input row */
+.input-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 25px;
+  background: #edeef0;
+  border-radius: 30px;
+  padding: 5px 10px;
+}
+
+.input-row input {
   flex: 1;
   border: none;
   outline: none;
@@ -52,17 +50,15 @@ input {
   font-size: 16px;
 }
 
-/* Style button */
-button {
+.input-row button {
   border: none;
   outline: none;
-  padding: 12px 20px;
+  padding: 12px 24px;
   background: #ff5945;
   color: #fff;
   font-size: 16px;
-  cursor: pointer;
   border-radius: 30px;
-  white-space: nowrap;
+  cursor: pointer;
 }
 
 /* Task list items */
@@ -73,14 +69,12 @@ ul li {
   user-select: none;
   cursor: pointer;
   position: relative;
-  word-wrap: break-word;
-  background: #f9f9f9;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
   border-radius: 8px;
-  transition: 0.2s;
+  word-wrap: break-word;
 }
 
-/* Check circle image before text */
 ul li::before {
   content: '';
   position: absolute;
@@ -94,22 +88,20 @@ ul li::before {
   left: 12px;
 }
 
-/* Style when checked */
 ul li.checked {
   color: #555;
   text-decoration: line-through;
-  background: #e2f7e2;
+  background: #d1e7dd;
 }
 
 ul li.checked::before {
   background-image: url(pic/OIP.webp);
 }
 
-/* Close (×) icon */
 ul li span {
   position: absolute;
-  right: 10px;
-  top: 8px;
+  right: 12px;
+  top: 10px;
   width: 30px;
   height: 30px;
   font-size: 20px;
@@ -123,36 +115,19 @@ ul li span:hover {
   background: #edeef0;
 }
 
-/* ✅ Mobile responsiveness */
+/* ✅ Mobile adjustments */
 @media (max-width: 576px) {
-  .row {
+  .input-row {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
   }
 
-  button {
-    width: 100%;
-  }
-
-  input {
+  .input-row button {
     width: 100%;
   }
 
   .todo-app {
-    padding: 30px 20px;
-    margin: 50px 10px 20px;
-  }
-
-  ul li {
-    padding-left: 45px;
-    font-size: 15px;
-  }
-
-  ul li::before {
-    top: 10px;
-    left: 10px;
-    height: 22px;
-    width: 22px;
+    margin: 40px 10px;
+    padding: 20px;
   }
 }
