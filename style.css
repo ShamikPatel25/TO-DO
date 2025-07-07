@@ -115,7 +115,7 @@ ul li span:hover {
   background: #edeef0;
 }
 
-/* ✅ Mobile adjustments */
+/*  Mobile adjustments */
 @media (max-width: 576px) {
   .input-row {
     flex-direction: column;
